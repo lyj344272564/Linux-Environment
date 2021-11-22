@@ -129,7 +129,29 @@
 
 #### MySql
 
-- ![](/img/tomcat2.png)
+- 网络下载包
+
+  ![](/img/mysql1.png)
+
+- 解析包
+
+  ![](/img/mysql2.png)
+
+- 安装包
+
+  ![](/img/mysql3.png)
+
+- 启动并且查询是否启动成功
+
+  ![](/img/mysql4.png)
+
+- 远程连接（各种问题）
+
+  - vi /etc/my.cnf 加入一行skip-grant-tables 跳过验证 忽略授权表 然后Mysql-u第一个修改密码 第二修改权限
+
+  ![](/img/mysql5.png)
+
+  ![](/img/mysql6.png)
 
 
 
