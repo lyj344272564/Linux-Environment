@@ -159,6 +159,32 @@
 
 ### Dubbo->Zookeeper->Redis->FastDfS->RabbitMQ
 
+#### Redis
+
+- 安装
+ ![](./img/redis1.png)
+
+-  后台运行
+
+  ![](./img/redis2.png)
+
+- 关闭数据库
+
+  ![](./img/redis3.png)
+
+- 监听以及连接
+
+  ![](./img/redis4.png)
+
+- 成功
+
+  ![](./img/redis5.png)
+
+
+
+
+
+
 ---
 
 ### Kafka
