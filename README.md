@@ -9,25 +9,25 @@
 
 1. 下载一个镜像
 
-![镜像](/img/jx.png)
+![镜像](./img/jx.png)
 
 2. 下载一个虚拟机（VMware是一个收费软件可以自己在网上找许可证输入即可我用的是）
 
-![虚拟机](/img/xnj.png)
+![虚拟机](./img/xnj.png)
 
 3. 虚拟机里面安装镜像（傻瓜式安装）
 
 - 这里推荐如果内存够的话分配2048mb的内存
 
-![安装指南](/img/安装指南.png)
+![安装指南](./img/安装指南.png)
 
 4. 等待安装是一个漫长的过程
 
-![等待](/img/等待ing.png)
+![等待](./img/等待ing.png)
 
 5. 开始界面
 
-![开始](/img/start.png)
+![开始](./img/start.png)
 
 6. 首先我们配置网络（这个和你本地网卡有关）
 
@@ -42,17 +42,19 @@
   NETMASK=255.255.255.0 DNS1=114.114.114.114
   ```
 
+- 之后service network restart(重启网络)
+
 - 目的是可以使用xshell连接linux我们直接通过xshell来操作linux
 
-  ![配置网络成功](/img/配置网络成功.png)
+  ![配置网络成功](./img/配置网络成功.png)
 
 7. 你得搞明白linux系统目录有些啥
 
-![linux目录](/img/linux目录.png)
+![linux目录](./img/linux目录.png)
 
 8. 下载xftp用于文件传输
 
-   ![xftp](/img/xftp.png)
+   ![xftp](./img/xftp.png)
 
 
 
@@ -64,21 +66,23 @@
 
 - 解压
 
-  ![](/img/jdk1.png)
+  ![](./img/jdk1.png)
 
 - 转移到usr/  改名 
 
-  ![](/img/jdk3.png)
+  ![](./img/jdk3.png)
 
   
 
-- 配置环境变量
+- 配置环境变量     使用root用户打开配置文件/etc/profifile，向文件末尾追加内容如下：
 
-  ![](/img/jdk2.png)
+  ![](./img/jdk2.png)
 
-- 检查是否成功
+-  保存退出后让文件生效并验证是否配置成功  source /etc/profil
 
-- ![](/img/jdk6.png)
+- 检查是否成功 
+
+- ![](./img/jdk6.png)
 
 #### Tomcat
 
@@ -117,41 +121,41 @@
 
 - 解压
 
-  ![](/img/tomcat1.png)
+  ![](./img/tomcat1.png)
 
 - 移动以及配置文件
 
-  ![](/img/tomcat3.png)
+  ![](./img/tomcat3.png)
 
 - 配置环境变量
 
-- ![](/img/tomcat2.png)
+- ![](./img/tomcat2.png)
 
 #### MySql
 
 - 网络下载包
 
-  ![](/img/mysql1.png)
+  ![](D:\github\Linux-Environment\mysql1.png)
 
 - 解析包
 
-  ![](/img/mysql2.png)
+  ![](./img/mysql2.png)
 
 - 安装包
 
-  ![](/img/mysql3.png)
+  ![](./img/mysql3.png)
 
 - 启动并且查询是否启动成功
 
-  ![](/img/mysql4.png)
+  ![](./img/mysql4.png)
 
 - 远程连接（各种问题）
 
   - vi /etc/my.cnf 加入一行skip-grant-tables 跳过验证 忽略授权表 然后Mysql-u第一个修改密码 第二修改权限
 
-  ![](/img/mysql5.png)
+  ![](./img/mysql5.png)
 
-  ![](/img/mysql6.png)
+  ![](./img/mysql6.png)
 
 
 
@@ -179,7 +183,6 @@
 - 成功
 
   ![](./img/redis5.png)
-
 
 
 
