@@ -84,6 +84,16 @@
 
 - ![](./img/jdk6.png)
 
+在云服务器中，只这样配置是不行的，会报一下错误，是因为缺少环境导致的
+
+![image-20220502204045297](D:\github\Linux-Environment\image-20220502204045297.png)
+
+````java
+运行这个就可以解决sudo yum install glibc.i686
+````
+
+
+
 #### Tomcat
 
 永久关闭防火墙
@@ -135,7 +145,7 @@
 
 - 网络下载包
 
-  ![](D:\github\Linux-Environment\mysql1.png)
+  ![](./img/mysql1.png)
 
 - 解析包
 
@@ -157,7 +167,35 @@
 
   ![](./img/mysql6.png)
 
+在云服务器安装MYSQL8的时候，会出现以下问题：
 
+**解决Mysql8密码验证方式**
+
+````java
+mysql 8.0 默认使用 caching_sha2_password 身份验证机制 —— 从原来的 mysql_native_password 更改为 caching_sha2_password。
+从 5.7 升级 8.0 版本的不会改变现有用户的身份验证方法，但新用户会默认使用新的 caching_sha2_password 。
+客户端不支持新的加密方式。
+````
+
+在docker中登录mysql
+
+1. 进入数据库：mysql -uroot -p
+
+   ````mysql
+   mysql -u root -p
+   ````
+
+2. 设置密码 123456 永不过期：
+
+   ````mysql
+   ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+   ````
+
+3. 刷新权限：FLUSH PRIVILEGES;
+
+   ````mysql
+   FLUSH PRIVILEGES;
+   ````
 
 ---
 
@@ -192,9 +230,49 @@
 
 ### Kafka
 
+![img](D:\github\Linux-Environment\1.png)
+
 ---
 
 ### Docker
 
+````java
+yum install -y docker
+
+````
+
+![image-20220511163847699](D:\github\Linux-Environment\image-20220511163847699.png)
+
+````java
+docker run -d --name zookeeper -p 2181:2181 -v /etc/localtime:/etc/localtime wurstmeister/zookeeper
+
+    
+ docker run  -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=10.9.44.11:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://10.9.44.11:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -t wurstmeister/kafka
 
 
+````
+
+如何用tomcat跑一个SpringBoot项目
+
+![image-20220517163321187](D:\github\Linux-Environment\image-20220517163321187.png)
+
+````java
+war包、
+
+````
+
+![image-20220517163406077](D:\github\Linux-Environment\image-20220517163406077.png)
+
+````java
+1.解压zip文件：unzip -d /解压后放在那个路径  xx.zip
+如果提示没有这个命令  那么需要安装unzip这个环境
+2.mvn clean package -Dmaven.test.skip=true
+````
+
+有了这个target
+
+![image-20220517163532386](D:\github\Linux-Environment\image-20220517163532386.png)
+
+把ROOT.war移动到tomcat的webapps下
+
+![image-20220517163709801](D:\github\Linux-Environment\image-20220517163709801.png)
